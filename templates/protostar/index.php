@@ -80,6 +80,7 @@ else
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php echo $this->language; ?>" lang="<?php echo $this->language; ?>" dir="<?php echo $this->direction; ?>">
 <head>
+		<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<jdoc:include type="head" />
 	<?php // Use of Google Font ?>
@@ -134,19 +135,19 @@ else
 	<div class="body">
 		<div class="container<?php echo ($params->get('fluidContainer') ? '-fluid' : ''); ?>">
 			<!-- Header -->
-			<header class="header" role="banner">
+			<!--<header class="header" role="banner">
 				<div class="header-inner clearfix">
-					<a class="brand pull-left" href="<?php echo $this->baseurl; ?>/">
-						<?php echo $logo; ?>
-						<?php if ($this->params->get('sitedescription')) : ?>
-							<?php echo '<div class="site-description">' . htmlspecialchars($this->params->get('sitedescription')) . '</div>'; ?>
-						<?php endif; ?>
+					<a class="brand pull-left" href="<?php /*echo $this->baseurl; */?>/">
+						<?php /*echo $logo; */?>
+						<?php /*if ($this->params->get('sitedescription')) : */?>
+							<?php /*echo '<div class="site-description">' . htmlspecialchars($this->params->get('sitedescription')) . '</div>'; */?>
+						<?php /*endif; */?>
 					</a>
 					<div class="header-search pull-right">
 						<jdoc:include type="modules" name="position-0" style="none" />
 					</div>
 				</div>
-			</header>
+			</header>-->
 			<?php if ($this->countModules('position-1')) : ?>
 				<!-- <nav class="navigation" role="navigation">
 					<div class="navbar pull-left">
@@ -194,18 +195,26 @@ else
 					</div>
 				</nav>
 
-
-					<jdoc:include type="message" />
-					<jdoc:include type="component" />
-					<jdoc:include type="modules" name="position-2" style="none" />
-					<?php if ($this->countModules('banner-custom')) : ?>
-					<div id="aside" class="span5">
-						<!-- Begin Right Sidebar -->
-						<jdoc:include type="modules" name="banner-custom" style="well" />
-						<!-- End Right Sidebar -->
-					</div>
-				    <?php endif; ?>
-					<!-- End Content -->
+						<div class="maincontent">
+								<!-- блоки со спонсорами (Sponsor's blocks) -->
+								<div class="sponsors col-md-8 col-lg-8 col-sm-12 col-xs-12">
+										<jdoc:include type="modules" name="mainsponsor" style="xhtml" />
+										<jdoc:include type="modules" name="soundsponsor" style="xhtml" />
+										<jdoc:include type="modules" name="esqlsponsor" style="xhtml" />
+								</div>
+								<?php if ($this->countModules('banner-custom')) : ?>
+										<div id="aside" class="col-md-4 col-lg-4 col-sm-4 hidden-xs right-banners">
+												<!-- Begin Right Sidebar -->
+													<jdoc:include type="modules" name="banner-custom" />
+												<!-- End Right Sidebar -->
+										</div>
+								<?php endif; ?>
+								<!-- /блоки со спонсорами (/Sponsor's blocks) -->
+								<jdoc:include type="message" />
+								<jdoc:include type="component" />
+								<jdoc:include type="modules" name="position-2" style="none" />
+						</div>
+				<!-- End Content -->
 				</main>
 				
 			</div>
