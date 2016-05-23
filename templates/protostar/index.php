@@ -133,7 +133,7 @@ else
 
 	<!-- Body -->
 	<div class="body">
-		<div class="container<?php echo ($params->get('fluidContainer') ? '-fluid' : ''); ?>">
+		<div class="bodycontainer container<?php echo ($params->get('fluidContainer') ? '-fluid' : ''); ?>">
 			<!-- Header -->
 			<!--<header class="header" role="banner">
 				<div class="header-inner clearfix">
@@ -203,9 +203,11 @@ else
 										<jdoc:include type="modules" name="esqlsponsor" style="xhtml" />
 								</div>
 								<?php if ($this->countModules('banner-custom')) : ?>
-										<div id="aside" class="col-md-4 col-lg-4 col-sm-4 hidden-xs right-banners">
+										<div id="aside" class="col-md-4 col-lg-4 hidden-sm hidden-xs right-banners">
 												<!-- Begin Right Sidebar -->
-													<jdoc:include type="modules" name="banner-custom" />
+												<jdoc:include type="modules" name="banner-custom" />
+												<jdoc:include type="modules" name="info-banners" />
+												<jdoc:include type="modules" name="tech-banner" />
 												<!-- End Right Sidebar -->
 										</div>
 								<?php endif; ?>
@@ -219,25 +221,23 @@ else
 				
 			</div>
 
-			
 
+				<!-- Footer -->
+				<footer class="footer" role="contentinfo">
+						<div class="container<?php echo ($params->get('fluidContainer') ? '-fluid' : ''); ?>">
+								<jdoc:include type="modules" name="footer" style="none" />
+								<!-- <p class="pull-right">
+										<a href="#top" id="back-top">
+												<?php /*echo JText::_('TPL_PROTOSTAR_BACKTOTOP'); */?>
+										</a>
+								</p> -->
+								<!--<p>
+										&copy; <?php /*echo date('Y'); */?> <?php /*echo $sitename; */?>
+								</p>-->
+						</div>
+				</footer>
 		</div>
 	</div>
-	<!-- Footer -->
-	<footer class="footer" role="contentinfo">
-		<div class="container<?php echo ($params->get('fluidContainer') ? '-fluid' : ''); ?>">
-			<hr />
-			<jdoc:include type="modules" name="footer" style="none" />
-			<p class="pull-right">
-				<a href="#top" id="back-top">
-					<?php echo JText::_('TPL_PROTOSTAR_BACKTOTOP'); ?>
-				</a>
-			</p>
-			<p>
-				&copy; <?php echo date('Y'); ?> <?php echo $sitename; ?>
-			</p>
-		</div>
-	</footer>
 	<jdoc:include type="modules" name="debug" style="none" />
 </body>
 </html>

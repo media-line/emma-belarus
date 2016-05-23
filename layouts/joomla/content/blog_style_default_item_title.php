@@ -20,12 +20,23 @@ JHtml::addIncludePath(JPATH_COMPONENT.'/helpers/html');
 
 			<?php if ($params->get('show_title')) : ?>
 				<h2 itemprop="name">
-					<?php if ($params->get('link_titles') && $params->get('access-view')) : ?>
-						<a href="<?php echo JRoute::_(ContentHelperRoute::getArticleRoute($displayData->slug, $displayData->catid, $displayData->language)); ?>" itemprop="url">
-						<?php echo $this->escape($displayData->title); ?></a>
-					<?php else : ?>
-						<?php echo $this->escape($displayData->title); ?>
-					<?php endif; ?>
+					<?php /*if ($params->get('link_titles') && $params->get('access-view')) : */?><!--
+						<a href="<?php /*echo JRoute::_(ContentHelperRoute::getArticleRoute($displayData->slug, $displayData->catid, $displayData->language)); */?>" itemprop="url">
+						<?php /*echo $this->escape($displayData->title); */?></a>
+					<?php /*else : */?>
+						<?php /*echo $this->escape($displayData->title); */?>
+					--><?php /*endif; */?>
+					<a href="<?php echo JRoute::_(ContentHelperRoute::getArticleRoute($displayData->slug, $displayData->catid, $displayData->language)); ?>" itemprop="url">
+						<?php $cutShortDescription = strlen($displayData->title); ?>
+						<?php $shortDescription = $displayData->title; ?>
+						<?php if ($cutShortDescription>80) {
+								$shortDescription = mb_substr($shortDescription, 0, 80, 'UTF-8');
+								$numb = mb_strrpos($shortDescription, ' ', 'UTF-8');
+								$shortDescription = mb_substr($shortDescription, 0, $numb, 'UTF-8');
+								$shortDescription .= '...';
+						}
+						echo $shortDescription; ?>
+					</a>
 				</h2>
 			<?php endif; ?>
 

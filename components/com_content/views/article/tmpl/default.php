@@ -20,7 +20,7 @@ $user    = JFactory::getUser();
 $info    = $params->get('info_block_position', 0);
 JHtml::_('behavior.caption');
 ?>
-<div id="reset-article" class="span7 item-page<?php echo $this->pageclass_sfx; ?>" itemscope itemtype="http://schema.org/Article">
+<div id="reset-article" class="col-md-8 col-lg-8 col-sm-12 col-xs-12 item-page<?php echo $this->pageclass_sfx; ?>" itemscope itemtype="http://schema.org/Article">
 	<meta itemprop="inLanguage" content="<?php echo ($this->item->language === '*') ? JFactory::getConfig()->get('language') : $this->item->language; ?>" />
 	<?php if ($this->params->get('show_page_heading')) : ?>
 	<div class="page-header">
