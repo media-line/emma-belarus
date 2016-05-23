@@ -2912,7 +2912,7 @@ input[type="submit"].btn.btn-mini {
   padding: 23px 15.8px;
   font-size: 14px;
 	line-height: 14px;
-  color: #37a303 !important;
+  color: #fff !important;
   border-radius: 0px;
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#38a303+0,518b06+27,c21e14+70,dc0519+100,dc0519+100 */
   background: rgb(56,163,3) !important; /* Old browsers */
@@ -2961,12 +2961,7 @@ input[type="submit"].btn.btn-mini {
 .nav-pills > .active > a,
 .nav-pills > .active > a:hover,
 .nav-pills > .active > a:focus {
-  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#dc0519+0,dc0519+0,c21e14+30,518b06+73,38a303+100 */
-  background: rgb(220,5,25) !important; /* Old browsers */
-  background: -moz-linear-gradient(top, rgba(220,5,25,1) 0%, rgba(220,5,25,1) 0%, rgba(194,30,20,1) 30%, rgba(81,139,6,1) 73%, rgba(56,163,3,1) 100%) !important; /* FF3.6-15 */
-  background: -webkit-linear-gradient(top, rgba(220,5,25,1) 0%,rgba(220,5,25,1) 0%,rgba(194,30,20,1) 30%,rgba(81,139,6,1) 73%,rgba(56,163,3,1) 100%) !important; /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to bottom, rgba(220,5,25,1) 0%,rgba(220,5,25,1) 0%,rgba(194,30,20,1) 30%,rgba(81,139,6,1) 73%,rgba(56,163,3,1) 100%) !important; /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#dc0519', endColorstr='#38a303',GradientType=0 ); /* IE6-9 */
+  box-shadow: 0 0 0 40px rgba(0, 0, 0, 0.3) inset;
 }
 .nav-stacked > li {
 	float: none;
@@ -7485,12 +7480,7 @@ body.modal-open {
   width: 100%;
 }
 .nav > li > a:hover {
-  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#dc0519+0,dc0519+0,c21e14+30,518b06+73,38a303+100 */
-  background: rgb(220,5,25) !important; /* Old browsers */
-  background: -moz-linear-gradient(top, rgba(220,5,25,1) 0%, rgba(220,5,25,1) 0%, rgba(194,30,20,1) 30%, rgba(81,139,6,1) 73%, rgba(56,163,3,1) 100%) !important; /* FF3.6-15 */
-  background: -webkit-linear-gradient(top, rgba(220,5,25,1) 0%,rgba(220,5,25,1) 0%,rgba(194,30,20,1) 30%,rgba(81,139,6,1) 73%,rgba(56,163,3,1) 100%) !important; /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to bottom, rgba(220,5,25,1) 0%,rgba(220,5,25,1) 0%,rgba(194,30,20,1) 30%,rgba(81,139,6,1) 73%,rgba(56,163,3,1) 100%) !important; /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#dc0519', endColorstr='#38a303',GradientType=0 ); /* IE6-9 */
+  box-shadow: 0 0 0 40px rgba(0, 0, 0, 0.3) inset;
 }
 .sponsors {
   height: auto; /*высота установлена временно, чтобы было удобнее верстать*/
@@ -7510,6 +7500,13 @@ body.modal-open {
 }
   .right-banners > div > p > img {
     width: 100%;
+  }
+
+	.right-banners h3 {
+    text-align: center;
+    color: #000000;
+    width: 170px;
+    margin: 25px auto;
   }
 .maincontent {
 	height: 100%;
@@ -7623,4 +7620,8 @@ body.site {
 .itemblog {
   padding: 40px 0px;
   border-bottom: 1px dashed #cccccc;
+}
+.custombanner-custom img, .moduletableinfo-banners img, .customtech-banner img {
+  width: 100%;
+  padding: 0 15px;
 }

@@ -205,9 +205,9 @@ else
 								<?php if ($this->countModules('banner-custom')) : ?>
 										<div id="aside" class="col-md-4 col-lg-4 hidden-sm hidden-xs right-banners">
 												<!-- Begin Right Sidebar -->
-												<jdoc:include type="modules" name="banner-custom" />
-												<jdoc:include type="modules" name="info-banners" />
-												<jdoc:include type="modules" name="tech-banner" />
+												<jdoc:include type="modules" name="banner-custom" style="xhtml" />
+												<jdoc:include type="modules" name="info-banners" style="xhtml" />
+												<jdoc:include type="modules" name="tech-banner" style="xhtml" />
 												<!-- End Right Sidebar -->
 										</div>
 								<?php endif; ?>
